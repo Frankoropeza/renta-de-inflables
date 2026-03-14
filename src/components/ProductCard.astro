@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  desc: string;
+  img: string;
+  tag?: string;
+  price?: string;
+  href: string;
+  waText?: string;
+}
+const { title, desc, img, tag, price, href, waText } = Astro.props;
+const phone = '5531281706';
+const defaultWaText = `Hola, me interesa rentar el ${title} 🎉`;
+const waLink = `https://wa.me/52${phone}?text=${encodeURIComponent(waText || defaultWaText)}`;
+---
+<article class="product-card">
+  <a href={href}>
+    <img src={img} alt={title} class="product-card__img" width="720" height="480" loading="lazy" />
+  </a>
+  <div class="product-card__body">
+    {tag && <span class="product-card__tag">{tag}</span>}
+    <h3 class="product-card__title"><a href={href}>{title}</a></h3>
+    <p class="product-card__desc">{desc}</p>
+    <div class="product-card__footer">
+      {price && <span class="product-card__price">{price}</span>}
+      <a href={waLink} target="_blank" rel="noopener" class="btn btn-sm btn-wa product-card__cta">
+        💬 Cotizar
+      </a>
+    </div>
+  </div>
+</article>

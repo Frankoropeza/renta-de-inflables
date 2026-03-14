@@ -1,0 +1,46 @@
+---
+const phone = '5531281706';
+const phoneDisplay = '55 3128 1706';
+const email = 'contacto@inflablesparafiestas.com.mx';
+---
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__left">
+      <a href={`tel:+52${phone}`} class="topbar__link">📞 {phoneDisplay}</a>
+      <a href={`mailto:${email}`} class="topbar__link">✉️ {email}</a>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__link">🕐 Lun–Dom 8:00–20:00</span>
+      <span class="topbar__link">📍 CDMX y Edomex</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .topbar {
+    background: #111827;
+    color: rgba(255,255,255,.85);
+    font-size: .82rem;
+    height: var(--topbar-height);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+  }
+  .topbar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .topbar__left, .topbar__right { display: flex; gap: 20px; align-items: center; }
+  .topbar__link { color: rgba(255,255,255,.85); transition: color .2s; }
+  .topbar__link:hover { color: #fff; }
+  @media (max-width: 768px) {
+    .topbar__right { display: none; }
+    .topbar__left { gap: 12px; }
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const phone = '5531281706';
+const phoneDisplay = '55 3128 1706';
+const email = 'contacto@inflablesparafiestas.com.mx';
+const waLink = `https://wa.me/52${phone}?text=${encodeURIComponent('Hola, quiero información sobre renta de inflables 🎉')}`;
+---
+<PageLayout
+  title="Contacto | Renta de Inflables Inflafi – CDMX y Edomex"
+  description="Contáctanos para cotizar tu inflable o servicio para fiestas. WhatsApp, teléfono y email. Atención de 8:00 a 20:00 hrs, lunes a domingo."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <span class="hero__badge">📞 Contacto</span>
+          <h1 class="hero__title">
+            <span class="highlight">Contáctanos</span> y Cotiza tu Evento
+          </h1>
+          <p class="hero__desc">
+            Estamos listos para ayudarte a planear la fiesta perfecta. Respuesta inmediata por WhatsApp o llámanos directamente.
+          </p>
+          <div class="hero__ctas">
+            <a href={waLink} target="_blank" rel="noopener" class="btn btn-lg btn-wa">💬 WhatsApp Directo</a>
+            <a href={`tel:+52${phone}`} class="btn btn-lg btn-outline" style="border-color:#fff;color:#fff;">📞 Llamar Ahora</a>
+          </div>
+        </div>
+        <div class="hero__copy-text">
+          <h2>Atención personalizada</h2>
+          <p>
+            Nuestro equipo te asesora para elegir el inflable y los servicios perfectos para tu evento. Te enviamos una cotización detallada en menos de 5 minutos por WhatsApp. Atendemos de lunes a domingo de 8:00 a 20:00 hrs.
+          </p>
+          <h2>Proceso de reservación</h2>
+          <p>
+            Cotizar es gratis y sin compromiso. Una vez que confirmes, apartamos tu fecha con un anticipo del 50%. El resto lo pagas el día del evento. Aceptamos transferencia bancaria y efectivo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader badge="Información" title="Datos de Contacto" />
+      <div class="grid-3">
+        <div class="why-card">
+          <div class="why-card__icon">💬</div>
+          <h3 class="why-card__title">WhatsApp</h3>
+          <p class="why-card__desc">Respuesta inmediata</p>
+          <a href={waLink} target="_blank" rel="noopener" class="btn btn-sm btn-wa" style="margin-top:12px;">Enviar Mensaje</a>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">📞</div>
+          <h3 class="why-card__title">Teléfono</h3>
+          <p class="why-card__desc">{phoneDisplay}</p>
+          <a href={`tel:+52${phone}`} class="btn btn-sm btn-primary" style="margin-top:12px;">Llamar</a>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">✉️</div>
+          <h3 class="why-card__title">Email</h3>
+          <p class="why-card__desc">{email}</p>
+          <a href={`mailto:${email}`} class="btn btn-sm btn-outline" style="margin-top:12px;">Enviar Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <SectionHeader badge="Sucursales" title="Nuestras Oficinas" />
+      <div class="grid-3">
+        <div class="why-card">
+          <div class="why-card__icon">📍</div>
+          <h3 class="why-card__title">Polanco</h3>
+          <p class="why-card__desc">Av. Presidente Masaryk 111, Piso 1<br>Col. Polanco Chapultepec, 11560</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">📍</div>
+          <h3 class="why-card__title">Santa Fe</h3>
+          <p class="why-card__desc">Prolongación Paseo de la Reforma 600<br>Col. Lomas de Santa Fe, 01210</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">📍</div>
+          <h3 class="why-card__title">Interlomas</h3>
+          <p class="why-card__desc">Blvd. Magnocentro 8<br>Col. Interlomas, Huixquilucan, 52760</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner
+    title="¡Cotiza Ahora Sin Compromiso!"
+    desc="Recibe tu cotización personalizada en menos de 5 minutos."
+  />
+</PageLayout>

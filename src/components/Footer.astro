@@ -1,0 +1,141 @@
+---
+const phone = '5531281706';
+const phoneDisplay = '55 3128 1706';
+const email = 'contacto@inflablesparafiestas.com.mx';
+const waLink = `https://wa.me/52${phone}?text=${encodeURIComponent('Hola, quiero cotizar un inflable 🎉')}`;
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand -->
+      <div class="footer__col">
+        <a href="/" class="footer__logo">
+          <img src="/img/logo-white.png" alt="Inflafi" width="140" height="42" />
+        </a>
+        <p class="footer__about">
+          Renta de inflables para fiestas infantiles, cumpleaños, eventos escolares y corporativos en CDMX y Estado de México.
+        </p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+
+      <!-- Inflables -->
+      <div class="footer__col">
+        <h4 class="footer__heading">Inflables</h4>
+        <ul>
+          <li><a href="/inflables/chicos/">Inflables Chicos</a></li>
+          <li><a href="/inflables/medianos/">Inflables Medianos</a></li>
+          <li><a href="/inflables/grandes/">Inflables Grandes</a></li>
+          <li><a href="/inflables/para-ninas/">Para Niñas</a></li>
+          <li><a href="/inflables/para-bodas/">Para Bodas</a></li>
+          <li><a href="/catalogo/">Catálogo Completo</a></li>
+        </ul>
+      </div>
+
+      <!-- Servicios -->
+      <div class="footer__col">
+        <h4 class="footer__heading">Servicios</h4>
+        <ul>
+          <li><a href="/servicios/pintacaritas/">Pintacaritas</a></li>
+          <li><a href="/servicios/maquina-palomitas/">Máquina de Palomitas</a></li>
+          <li><a href="/servicios/maquina-burbujas/">Máquina de Burbujas</a></li>
+          <li><a href="/servicios/mesa-dulces/">Mesa de Dulces</a></li>
+          <li><a href="/servicios/mobiliario-infantil/">Mobiliario Infantil</a></li>
+          <li><a href="/servicios/pantalla-inflable/">Pantalla Inflable</a></li>
+          <li><a href="/servicios/decoracion/">Decoración</a></li>
+        </ul>
+      </div>
+
+      <!-- Cobertura -->
+      <div class="footer__col">
+        <h4 class="footer__heading">Cobertura</h4>
+        <ul>
+          <li><a href="/cobertura/cdmx/">CDMX (16 Alcaldías)</a></li>
+          <li><a href="/cobertura/edomex/">Estado de México</a></li>
+          <li><a href="/paquetes/">Paquetes para Fiestas</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Sucursales -->
+      <div class="footer__col">
+        <h4 class="footer__heading">Nuestras Sucursales</h4>
+        <div class="footer__sucursal">
+          <strong>📍 Polanco</strong>
+          <p>Av. Presidente Masaryk 111, Piso 1<br>Col. Polanco Chapultepec, 11560</p>
+        </div>
+        <div class="footer__sucursal">
+          <strong>📍 Santa Fe</strong>
+          <p>Prolongación Paseo de la Reforma 600<br>Col. Lomas de Santa Fe, 01210</p>
+        </div>
+        <div class="footer__sucursal">
+          <strong>📍 Interlomas</strong>
+          <p>Blvd. Magnocentro 8<br>Col. Interlomas, Huixquilucan, 52760</p>
+        </div>
+        <div class="footer__contact">
+          <a href={`tel:+52${phone}`}>📞 {phoneDisplay}</a>
+          <a href={waLink} target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href={`mailto:${email}`}>✉️ {email}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {year} Inflafi – Renta de Inflables. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-dark);
+    color: rgba(255,255,255,.8);
+    padding: 64px 0 32px;
+    font-size: .92rem;
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.4fr .9fr .9fr .9fr 1.2fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .footer__logo img { height: 36px; width: auto; margin-bottom: 12px; }
+  .footer__about { color: rgba(255,255,255,.6); line-height: 1.6; margin-bottom: 16px; }
+  .footer__social { display: flex; gap: 12px; }
+  .footer__social a { font-size: 1.3rem; transition: opacity .2s; }
+  .footer__social a:hover { opacity: .7; }
+  .footer__heading {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .footer__col ul { display: flex; flex-direction: column; gap: 8px; }
+  .footer__col ul a { color: rgba(255,255,255,.7); transition: color .2s; }
+  .footer__col ul a:hover { color: var(--color-primary); }
+  .footer__sucursal { margin-bottom: 12px; }
+  .footer__sucursal strong { color: #fff; font-size: .88rem; }
+  .footer__sucursal p { color: rgba(255,255,255,.55); font-size: .82rem; line-height: 1.5; }
+  .footer__contact { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+  .footer__contact a { color: rgba(255,255,255,.7); font-size: .85rem; }
+  .footer__contact a:hover { color: var(--color-primary); }
+  .footer__bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 24px;
+    text-align: center;
+    color: rgba(255,255,255,.4);
+    font-size: .82rem;
+  }
+  @media (max-width: 1024px) {
+    .footer__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .footer__grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

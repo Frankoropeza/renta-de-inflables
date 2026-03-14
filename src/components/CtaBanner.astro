@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  desc?: string;
+  btnText?: string;
+  btnHref?: string;
+}
+const { title, desc, btnText = '💬 Cotizar por WhatsApp', btnHref } = Astro.props;
+const phone = '5531281706';
+const defaultLink = `https://wa.me/52${phone}?text=${encodeURIComponent('Hola, quiero cotizar para mi evento 🎉')}`;
+const link = btnHref || defaultLink;
+---
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="cta-banner__title">{title}</h2>
+    {desc && <p class="cta-banner__desc">{desc}</p>}
+    <a href={link} target={link.startsWith('http') ? '_blank' : undefined} rel={link.startsWith('http') ? 'noopener' : undefined} class="btn btn-lg btn-white">
+      {btnText}
+    </a>
+  </div>
+</section>

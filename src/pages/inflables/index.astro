@@ -1,0 +1,93 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const categorias = [
+  {
+    title: 'Inflables Chicos',
+    desc: 'Perfectos para bebés y niños pequeños (1-5 años). Ideales para fiestas en interiores o espacios reducidos.',
+    items: [
+      { title: 'Mini Castillo Baby', desc: 'Brincolin compacto ideal para los más pequeños. Seguro y divertido.', img: '/img/inflables/mini-castillo.avif', tag: 'Chico', price: 'Desde $800', href: '/inflables/mini-castillo/' },
+    ],
+  },
+  {
+    title: 'Inflables Medianos',
+    desc: 'Los más populares para cumpleaños y fiestas infantiles. Combinan brinco y tobogán para niños de 3 a 10 años.',
+    items: [
+      { title: 'Igloo Gusanitos', desc: 'Inflable interactivo con túnel y tobogán integrado.', img: '/img/inflables/gusanitos.avif', tag: 'Mediano', price: 'Desde $1,200', href: '/inflables/gusanitos/' },
+      { title: 'Dragones Rojos', desc: 'Diseño temático con doble carril de diversión.', img: '/img/inflables/dragones-rojos.avif', tag: 'Mediano', price: 'Desde $1,200', href: '/inflables/dragones-rojos/' },
+      { title: 'Mini Jungla', desc: 'Aventura selvática con tobogán y área de brinco.', img: '/img/inflables/mini-jungla.avif', tag: 'Mediano', price: 'Desde $1,200', href: '/inflables/mini-jungla/' },
+    ],
+  },
+  {
+    title: 'Inflables Grandes',
+    desc: 'Para eventos grandes y fiestas al aire libre. Toboganes gigantes y mucha emoción.',
+    items: [
+      { title: 'Barco Pirata', desc: 'Tobogán gigante con forma de barco pirata.', img: '/img/inflables/barco-pirata.avif', tag: 'Grande', price: 'Desde $1,800', href: '/inflables/barco-pirata/' },
+      { title: 'Extremo', desc: 'Nuestro inflable más grande y emocionante.', img: '/img/inflables/extremo.avif', tag: 'Grande', price: 'Desde $2,000', href: '/inflables/extremo/' },
+    ],
+  },
+  {
+    title: 'Inflables Especiales',
+    desc: 'Para ocasiones especiales: fiestas de niñas y bodas elegantes.',
+    items: [
+      { title: 'Castillo de Princesas', desc: 'Temática de princesas con colores pastel.', img: '/img/inflables/castillo-princesas.avif', tag: 'Para Niñas', price: 'Desde $1,400', href: '/inflables/castillo-princesas/' },
+      { title: 'Castillo Blanco Elegance', desc: 'Inflable elegante para bodas y comuniones.', img: '/img/inflables/castillo-blanco.avif', tag: 'Bodas', price: 'Desde $2,500', href: '/inflables/castillo-blanco/' },
+    ],
+  },
+];
+---
+<PageLayout
+  title="Renta de Inflables para Fiestas | Catálogo Completo | Inflafi"
+  description="Catálogo completo de inflables en renta: chicos, medianos, grandes, para niñas y bodas. Entrega gratis en CDMX. Precios desde $800."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <span class="hero__badge">🎪 Catálogo de Inflables</span>
+          <h1 class="hero__title">
+            Renta de <span class="highlight">Inflables</span> para Fiestas Infantiles
+          </h1>
+          <p class="hero__desc">
+            Elige entre 8 modelos de inflables profesionales para tu evento. Desde brincolines chicos para bebés hasta toboganes gigantes para fiestas grandes. Todos incluyen entrega, instalación y supervisión.
+          </p>
+          <div class="hero__ctas">
+            <a href="https://wa.me/525531281706?text=Hola%2C%20quiero%20ver%20los%20inflables%20disponibles%20%F0%9F%8E%89" target="_blank" rel="noopener" class="btn btn-lg btn-wa">💬 Cotizar Ahora</a>
+            <a href="/paquetes/" class="btn btn-lg btn-outline" style="border-color:#fff;color:#fff;">Ver Paquetes →</a>
+          </div>
+        </div>
+        <div class="hero__copy-text">
+          <h2>Inflables de grado comercial</h2>
+          <p>
+            Todos nuestros inflables son de grado comercial con material PVC laminado reforzado, costuras dobles y sistemas de anclaje profesional. Cada inflable es sanitizado antes y después de cada evento, garantizando la higiene y seguridad de los niños en tu fiesta.
+          </p>
+          <h2>¿Cuál es el inflable ideal para tu evento?</h2>
+          <p>
+            Para fiestas en interiores o con niños pequeños, recomendamos los inflables chicos. Para cumpleaños al aire libre, los medianos son perfectos. Si tu evento es grande (escuela, corporativo, jardín amplio), los inflables grandes son la mejor opción. ¿Fiesta de princesas o boda? Tenemos opciones especiales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {categorias.map(cat => (
+    <section class="section">
+      <div class="container">
+        <SectionHeader title={cat.title} desc={cat.desc} />
+        <div class="grid-3">
+          {cat.items.map(item => (
+            <ProductCard {...item} />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <CtaBanner
+    title="¿No encuentras lo que buscas?"
+    desc="Contáctanos y te ayudamos a elegir el inflable perfecto para tu evento."
+  />
+</PageLayout>

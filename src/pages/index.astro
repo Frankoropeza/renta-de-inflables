@@ -1,0 +1,194 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import FaqItem from '../components/FaqItem.astro';
+
+const inflables = [
+  { title: 'Mini Castillo Baby', desc: 'Ideal para bebés y niños pequeños. Perfecto para fiestas en interiores.', img: '/img/inflables/mini-castillo.avif', tag: 'Chico', price: 'Desde $800', href: '/inflables/mini-castillo/' },
+  { title: 'Igloo Gusanitos', desc: 'Inflable mediano interactivo con tobogán. ¡Diversión garantizada!', img: '/img/inflables/gusanitos.avif', tag: 'Mediano', price: 'Desde $1,200', href: '/inflables/gusanitos/' },
+  { title: 'Dragones Rojos', desc: 'Inflable mediano con diseño temático de dragones. Doble carril de diversión.', img: '/img/inflables/dragones-rojos.avif', tag: 'Mediano', price: 'Desde $1,200', href: '/inflables/dragones-rojos/' },
+  { title: 'Mini Jungla', desc: 'Aventura selvática con tobogán y área de brinco. Para niños de 3 a 10 años.', img: '/img/inflables/mini-jungla.avif', tag: 'Mediano', price: 'Desde $1,200', href: '/inflables/mini-jungla/' },
+  { title: 'Castillo de Princesas', desc: 'El favorito de las niñas. Temática de princesas con colores pastel.', img: '/img/inflables/castillo-princesas.avif', tag: 'Para Niñas', price: 'Desde $1,400', href: '/inflables/castillo-princesas/' },
+  { title: 'Barco Pirata', desc: 'Inflable grande con forma de barco pirata. Tobogán gigante incluido.', img: '/img/inflables/barco-pirata.avif', tag: 'Grande', price: 'Desde $1,800', href: '/inflables/barco-pirata/' },
+  { title: 'Extremo', desc: 'Nuestro inflable más grande y emocionante. Ideal para eventos grandes.', img: '/img/inflables/extremo.avif', tag: 'Grande', price: 'Desde $2,000', href: '/inflables/extremo/' },
+  { title: 'Castillo Blanco Elegance', desc: 'Elegante inflable blanco para bodas, comuniones y eventos especiales.', img: '/img/inflables/castillo-blanco.avif', tag: 'Bodas', price: 'Desde $2,500', href: '/inflables/castillo-blanco/' },
+];
+
+const servicios = [
+  { icon: '🎨', title: 'Pintacaritas', desc: 'Artistas profesionales con diseños únicos para los pequeños.', href: '/servicios/pintacaritas/' },
+  { icon: '🍿', title: 'Máquina de Palomitas', desc: 'Palomitas recién hechas ilimitadas para tu evento.', href: '/servicios/maquina-palomitas/' },
+  { icon: '🫧', title: 'Máquina de Burbujas', desc: 'Ambiente mágico con burbujas flotantes para los niños.', href: '/servicios/maquina-burbujas/' },
+  { icon: '🍬', title: 'Mesa de Dulces', desc: 'Mesa temática decorada con variedad de dulces y botanas.', href: '/servicios/mesa-dulces/' },
+  { icon: '🪑', title: 'Mobiliario Infantil', desc: 'Mesas, sillas y manteles infantiles para tu fiesta.', href: '/servicios/mobiliario-infantil/' },
+  { icon: '📺', title: 'Pantalla Inflable', desc: 'Cine al aire libre con pantalla inflable gigante.', href: '/servicios/pantalla-inflable/' },
+  { icon: '🎈', title: 'Decoración', desc: 'Globos, centros de mesa y decoración temática profesional.', href: '/servicios/decoracion/' },
+  { icon: '🎉', title: 'Paquetes Completos', desc: 'Todo incluido: inflable + servicios + mobiliario con descuento.', href: '/paquetes/' },
+];
+---
+<PageLayout
+  title="Renta de Inflables en CDMX y Edomex | Inflafi – Fiestas Infantiles"
+  description="Renta de inflables para fiestas infantiles, cumpleaños y eventos en Ciudad de México y Estado de México. 8 modelos, 12 servicios, entrega gratis en CDMX. ¡Cotiza ahora!"
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <span class="hero__badge">🎉 #1 en Renta de Inflables en CDMX</span>
+          <h1 class="hero__title">
+            Renta de <span class="highlight">Inflables para Fiestas</span> Infantiles en CDMX y Edomex
+          </h1>
+          <p class="hero__desc">
+            Haz de tu evento una fiesta inolvidable con nuestros inflables profesionales. Entrega, instalación y supervisión incluida. Servicio en las 16 alcaldías de CDMX y principales municipios del Estado de México.
+          </p>
+          <div class="hero__ctas">
+            <a href="https://wa.me/525531281706?text=Hola%2C%20quiero%20cotizar%20un%20inflable%20para%20mi%20fiesta%20%F0%9F%8E%89" target="_blank" rel="noopener" class="btn btn-lg btn-wa">💬 Cotizar por WhatsApp</a>
+            <a href="/catalogo/" class="btn btn-lg btn-outline" style="border-color:#fff;color:#fff;">Ver Catálogo →</a>
+          </div>
+        </div>
+        <div class="hero__copy-text">
+          <h2>¿Por qué elegirnos para tu fiesta?</h2>
+          <p>
+            En Inflafi somos especialistas en renta de inflables para fiestas infantiles en la Ciudad de México y el Estado de México. Contamos con más de 8 modelos de inflables para todo tipo de eventos: cumpleaños, fiestas temáticas, eventos escolares, reuniones familiares, bodas y celebraciones especiales. Todos nuestros inflables son de grado comercial, sanitizados y supervisados por personal capacitado.
+          </p>
+          <h2>Servicio integral para tu evento</h2>
+          <p>
+            No solo rentamos inflables — ofrecemos un servicio completo que incluye pintacaritas, máquina de palomitas, burbujas, mesa de dulces, mobiliario infantil, pantalla inflable y decoración profesional. Entregamos, instalamos y recogemos sin costo adicional en CDMX. Más de 500 eventos exitosos nos respaldan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INFLABLES ═══ -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        badge="Nuestros Inflables"
+        title="Inflables para Todo Tipo de Evento"
+        desc="Desde inflables chicos para bebés hasta toboganes gigantes para fiestas grandes. Encuentra el inflable perfecto para tu celebración."
+      />
+      <div class="grid-4">
+        {inflables.map(item => (
+          <ProductCard {...item} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICIOS ═══ -->
+  <section class="section section--alt">
+    <div class="container">
+      <SectionHeader
+        badge="Servicios Adicionales"
+        title="Todo lo que Necesitas para tu Fiesta"
+        desc="Complementa tu evento con nuestros servicios profesionales. Pintacaritas, palomitas, burbujas, decoración y mucho más."
+      />
+      <div class="grid-4">
+        {servicios.map(item => (
+          <ServiceCard {...item} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POR QUÉ ELEGIRNOS ═══ -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        badge="¿Por Qué Inflafi?"
+        title="Razones para Elegirnos"
+        desc="Más de 500 familias felices nos respaldan en CDMX y Estado de México."
+      />
+      <div class="grid-4">
+        <div class="why-card">
+          <div class="why-card__icon">🚚</div>
+          <h3 class="why-card__title">Entrega Gratis en CDMX</h3>
+          <p class="why-card__desc">Llevamos, instalamos y recogemos el inflable sin costo adicional en las 16 alcaldías.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">🛡️</div>
+          <h3 class="why-card__title">Seguridad Garantizada</h3>
+          <p class="why-card__desc">Inflables de grado comercial, sanitizados y supervisados por personal capacitado durante tu evento.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">⏰</div>
+          <h3 class="why-card__title">Puntualidad</h3>
+          <p class="why-card__desc">Llegamos 1 hora antes de tu evento para que todo esté listo. Servicio de 8:00 a 20:00 hrs.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon">💰</div>
+          <h3 class="why-card__title">Precios Accesibles</h3>
+          <p class="why-card__desc">Los mejores precios del mercado con paquetes todo incluido desde $800. Sin costos ocultos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COBERTURA ═══ -->
+  <section class="section section--dark">
+    <div class="container">
+      <SectionHeader
+        badge="Cobertura"
+        title="Servicio en CDMX y Estado de México"
+        desc="Cubrimos las 16 alcaldías de la Ciudad de México y los principales municipios del Estado de México."
+      />
+      <div class="coverage__badges">
+        <a href="/cobertura/cdmx/alvaro-obregon/" class="coverage__badge">Álvaro Obregón</a>
+        <a href="/cobertura/cdmx/benito-juarez/" class="coverage__badge">Benito Juárez</a>
+        <a href="/cobertura/cdmx/coyoacan/" class="coverage__badge">Coyoacán</a>
+        <a href="/cobertura/cdmx/cuauhtemoc/" class="coverage__badge">Cuauhtémoc</a>
+        <a href="/cobertura/cdmx/gustavo-a-madero/" class="coverage__badge">Gustavo A. Madero</a>
+        <a href="/cobertura/cdmx/iztapalapa/" class="coverage__badge">Iztapalapa</a>
+        <a href="/cobertura/cdmx/miguel-hidalgo/" class="coverage__badge">Miguel Hidalgo</a>
+        <a href="/cobertura/cdmx/tlalpan/" class="coverage__badge">Tlalpan</a>
+        <a href="/cobertura/edomex/naucalpan/" class="coverage__badge">Naucalpan</a>
+        <a href="/cobertura/edomex/tlalnepantla/" class="coverage__badge">Tlalnepantla</a>
+        <a href="/cobertura/edomex/ecatepec/" class="coverage__badge">Ecatepec</a>
+        <a href="/cobertura/edomex/huixquilucan/" class="coverage__badge">Huixquilucan</a>
+      </div>
+      <p class="text-center mt-48" style="opacity:.7;">
+        <a href="/cobertura/" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Ver todas las zonas de cobertura →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <SectionHeader
+        badge="Preguntas Frecuentes"
+        title="Lo que Necesitas Saber"
+      />
+      <FaqItem question="¿Cuánto cuesta rentar un inflable?">
+        <p>Nuestros precios van desde $800 para inflables chicos hasta $2,500 para inflables grandes y de bodas. El precio incluye entrega, instalación, supervisión y recolección en CDMX. Para Estado de México se aplica un cargo adicional por envío según la zona.</p>
+      </FaqItem>
+      <FaqItem question="¿Cuánto tiempo dura la renta del inflable?">
+        <p>La renta estándar es por 5 horas. Si necesitas más tiempo, podemos extender la renta con un cargo adicional por hora. Llegamos 1 hora antes de tu evento para instalar.</p>
+      </FaqItem>
+      <FaqItem question="¿Los inflables son seguros para los niños?">
+        <p>Sí, todos nuestros inflables son de grado comercial con costuras reforzadas y material resistente. Se sanitizan antes y después de cada evento. Además, incluimos supervisión de personal capacitado durante toda la renta.</p>
+      </FaqItem>
+      <FaqItem question="¿Cubren mi zona?">
+        <p>Cubrimos las 16 alcaldías de la Ciudad de México con entrega gratuita, y los principales municipios del Estado de México (Naucalpan, Tlalnepantla, Ecatepec, Huixquilucan, Atizapán, entre otros) con un cargo adicional de envío.</p>
+      </FaqItem>
+      <FaqItem question="¿Qué necesito para instalar un inflable?">
+        <p>Necesitas un espacio plano y amplio (pasto, concreto o piso firme), acceso a corriente eléctrica (110V) y que el área esté libre de objetos punzantes. Nosotros nos encargamos del resto.</p>
+      </FaqItem>
+      <FaqItem question="¿Puedo rentar servicios adicionales sin inflable?">
+        <p>¡Claro! Puedes contratar pintacaritas, máquina de palomitas, mesa de dulces, mobiliario o cualquier servicio por separado. También ofrecemos paquetes completos con descuento.</p>
+      </FaqItem>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <CtaBanner
+    title="¿Listo para tu Fiesta Inolvidable?"
+    desc="Cotiza sin compromiso y recibe una propuesta personalizada para tu evento en menos de 5 minutos."
+  />
+
+</PageLayout>

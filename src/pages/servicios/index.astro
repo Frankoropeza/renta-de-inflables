@@ -1,0 +1,71 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const servicios = [
+  { icon: '🎨', title: 'Pintacaritas', desc: 'Artistas profesionales que transforman rostros en obras de arte. Diseños temáticos para cualquier fiesta infantil.', href: '/servicios/pintacaritas/' },
+  { icon: '🍿', title: 'Máquina de Palomitas', desc: 'Palomitas recién hechas e ilimitadas durante tu evento. Incluye operador y todos los insumos.', href: '/servicios/maquina-palomitas/' },
+  { icon: '🫧', title: 'Máquina de Burbujas', desc: 'Crea un ambiente mágico con miles de burbujas flotantes. Los niños se vuelven locos de emoción.', href: '/servicios/maquina-burbujas/' },
+  { icon: '🍬', title: 'Mesa de Dulces', desc: 'Mesa decorada temáticamente con variedad de dulces, botanas y postres para tus invitados.', href: '/servicios/mesa-dulces/' },
+  { icon: '🪑', title: 'Mobiliario Infantil', desc: 'Mesas, sillas, manteles y cubiertos infantiles. Todo lo necesario para que los niños estén cómodos.', href: '/servicios/mobiliario-infantil/' },
+  { icon: '📺', title: 'Pantalla Inflable', desc: 'Cine al aire libre con pantalla inflable gigante. Perfecta para noches de películas y eventos especiales.', href: '/servicios/pantalla-inflable/' },
+  { icon: '🎈', title: 'Decoración para Fiestas', desc: 'Arcos de globos, centros de mesa, guirnaldas y decoración temática profesional para tu evento.', href: '/servicios/decoracion/' },
+];
+---
+<PageLayout
+  title="Servicios para Fiestas Infantiles en CDMX | Inflafi"
+  description="Servicios complementarios para tu fiesta: pintacaritas, palomitas, burbujas, mesa de dulces, mobiliario infantil, pantalla inflable y decoración. CDMX y Edomex."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <span class="hero__badge">🎉 Servicios para Fiestas</span>
+          <h1 class="hero__title">
+            <span class="highlight">Servicios</span> para Fiestas Infantiles en CDMX
+          </h1>
+          <p class="hero__desc">
+            Complementa tu evento con nuestros servicios profesionales. Desde pintacaritas hasta pantalla inflable — todo lo que necesitas para hacer de tu fiesta un evento inolvidable.
+          </p>
+          <div class="hero__ctas">
+            <a href="https://wa.me/525531281706?text=Hola%2C%20me%20interesan%20sus%20servicios%20para%20fiestas%20%F0%9F%8E%89" target="_blank" rel="noopener" class="btn btn-lg btn-wa">💬 Cotizar Servicios</a>
+            <a href="/paquetes/" class="btn btn-lg btn-outline" style="border-color:#fff;color:#fff;">Ver Paquetes →</a>
+          </div>
+        </div>
+        <div class="hero__copy-text">
+          <h2>Más que inflables: una fiesta completa</h2>
+          <p>
+            En Inflafi no solo rentamos inflables — somos tu aliado completo para organizar la fiesta perfecta. Nuestros servicios adicionales incluyen pintacaritas profesional, máquinas de palomitas y burbujas, mesas de dulces decoradas, mobiliario infantil, pantalla inflable para cine al aire libre y decoración temática.
+          </p>
+          <h2>Combina servicios y ahorra</h2>
+          <p>
+            Contrata 2 o más servicios y obtén descuento especial. También puedes elegir uno de nuestros paquetes todo incluido que combinan inflable + servicios + mobiliario a precio preferencial. Todos nuestros servicios incluyen operador, insumos y transporte en CDMX.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        badge="Nuestros Servicios"
+        title="Todo para tu Fiesta en un Solo Lugar"
+        desc="7 servicios profesionales para hacer de tu evento algo especial."
+      />
+      <div class="grid-4">
+        {servicios.map(s => (
+          <ServiceCard {...s} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner
+    title="¿Quieres un Paquete Todo Incluido?"
+    desc="Combina inflable + servicios con descuento especial. Cotiza tu paquete personalizado."
+    btnText="💬 Armar Mi Paquete"
+  />
+</PageLayout>
