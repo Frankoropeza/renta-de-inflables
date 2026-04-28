@@ -1,0 +1,27 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "astro.config.mjs",
+      "file_type": "code",
+      "source_file": "/Users/frankoropeza/Desktop/PAGINAS/renta-de-inflables/astro.config.mjs",
+      "source_location": "L1",
+      "id": "users_frankoropeza_desktop_paginas_renta_de_inflables_astro_config_mjs",
+      "community": 0,
+      "norm_label": "astro.config.mjs"
+    },
+    {
+      "label": "env.d.ts",
+      "file_type": "code",
+      "source_file": "/Users/frankoropeza/Desktop/PAGINAS/renta-de-inflables/src/env.d.ts",
+      "source_location": "L1",
+      "id": "users_frankoropeza_desktop_paginas_renta_de_inflables_src_env_d_ts",
+      "community": 1,
+      "norm_label": "env.d.ts"
+    }
+  ],
+  "links": [],
+  "hyperedges": []
+}
